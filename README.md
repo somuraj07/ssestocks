@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SSE Stocks Management System
 
-## Getting Started
+A web application designed for managing and monitoring stocks. Users can view available stock items, while administrators have full control to add, update, and track inventory. The system includes **role-based authentication** using **JWT** and supports uploading stock data through **Excel files**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Core Features
+
+- **User Access:** View available stocks and search for items.
+- **Admin Access:** Add, edit, delete stocks and manage the entire system.
+- **Role-Based Authentication:** JWT ensures secure access levels for users and admins.
+- **Excel Upload for Inventory:** Quickly add or update stock records in bulk.
+- **Clean UI:** Built using Next.js, React, and Tailwind CSS.
+
+---
+
+## User Roles
+
+| Role | Permissions |
+|------|-------------|
+| **User** | View stock list & stock status |
+| **Admin** | Full control: Add, edit, delete, upload Excel & manage users |
+
+---
+
+## Tech Overview
+
+- **Frontend:** Next.js + React + Tailwind CSS
+- **Authentication:** NextAuth with JWT
+- **Admin Tools:** Excel import support for adding/updating stock
+
+---
+
+## Stock Upload (Excel Format)
+
+The Excel file should contain columns like:
+
+```
+Item Name | Category | Quantity | Price | Description
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Workflow Summary
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. User logs in.
+2. Authentication determines if the user is **admin** or **stock viewer**.
+3. Admin can upload Excel sheets or manually add inventory.
+4. Users can browse, search, and check stock availability.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Purpose
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This system provides a simple, scalable solution for managing stocks in an organization, store, or warehouse with straightforward UI and secure access control.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open and free to use for educational and development purposes.
